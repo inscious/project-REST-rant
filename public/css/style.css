@@ -3,8 +3,33 @@ h1 {
     color: cornflowerblue;
     }
 
+/* NAV COMPONENTS*/
+nav {
+    background-color: cornflowerblue;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 25px 0 0 ;
+}
+
+/*  */
+/* BODY */
+
+body {
+    text-align: center;
+}
+
 #homeImage {
-    max-width: 500px;
+    width: 50%;
+}
+
+img {
+    width: 50%;
 }
 
 #fourOfourimage {
