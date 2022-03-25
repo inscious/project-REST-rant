@@ -7,7 +7,6 @@ router.get('/new', (req, res) => {
 })
 
 //POST /places
-
 router.post('/', (req, res) => {
     if (!req.body.pic) {
       // Default image if one is not provided
@@ -42,6 +41,20 @@ router.get('/', (req, res) => {
     // }];
     res.render('places/index', {places});
 });
+
+// GET /PLACES
+router.get('/:id', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+        res.render('error404')
+    }
+    else if (!places[id]) {
+        res.render('error404')
+    }
+    else {
+        res.render('places/show'), { place: places[id]}
+    }
+})
 
 //HOME ROUTE
 router.get('/', (req, res) => {
