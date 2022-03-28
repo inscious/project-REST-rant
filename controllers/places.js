@@ -1,6 +1,8 @@
 const router = require('express').Router()
 const db = require('../models')
 
+
+// Home Route
 router.get('/', (req, res) => {
     db.Place.find()
     .then((places) => {
@@ -25,12 +27,14 @@ router.post('/', (req, res) => {
     })
 })
 
+
+// New Place Route
 router.get('/new', (req, res) => {
     res.render('places/new')
 })
 
 
-// Show Route
+// Get/Show Route
 router.get('/:id', (req, res) => {
     db.Place.findById(req.params.id)
     .then(place => {
