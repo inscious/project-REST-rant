@@ -1,10 +1,22 @@
 const router = require('express').Router();
 const places = require('../models/places.js')
 
+
+
+
+//HOME ROUTE
+router.get('/', (req, res) => {
+    res.render('places/index', { places });
+})
+
+
+
 // NEW ROUTE
 router.get('/new', (req, res) => {
     res.render('places/new')
 })
+
+
 
 //POST /places
 router.post('/', (req, res) => {
@@ -23,24 +35,27 @@ router.post('/', (req, res) => {
 })
 
 
-router.get('/', (req, res) => {
-    // let places = [{
-    //     name: 'H-Thai-ML',
-    //     city: 'Seattle',
-    //     state: 'WA',
-    //     cuisines: 'Thai, Pan-Asian',
-    //     // pic: '/images/pexels-pixabay-262978.jpg'
-    //     pic: 'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
-    // }, {
-    //     name: 'Coding Cat Cafe',
-    //     city: 'Phoenix',
-    //     state: 'AZ',
-    //     cuisines: 'Coffee, Bakery',
-    //     // pic: '/images/pexels-elevate-1267320.jpg'
-    //     pic: 'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
-    // }];
-    res.render('places/index', {places});
-});
+
+// router.get('/', (req, res) => {
+//     // let places = [{
+//     //     name: 'H-Thai-ML',
+//     //     city: 'Seattle',
+//     //     state: 'WA',
+//     //     cuisines: 'Thai, Pan-Asian',
+//     //     // pic: '/images/pexels-pixabay-262978.jpg'
+//     //     pic: 'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
+//     // }, {
+//     //     name: 'Coding Cat Cafe',
+//     //     city: 'Phoenix',
+//     //     state: 'AZ',
+//     //     cuisines: 'Coffee, Bakery',
+//     //     // pic: '/images/pexels-elevate-1267320.jpg'
+//     //     pic: 'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
+//     // }];
+//     res.render('places/index', {places});
+// });
+
+
 
 // GET /PLACES
 router.get('/:id', (req, res) => {
@@ -52,14 +67,28 @@ router.get('/:id', (req, res) => {
         res.render('error404')
     }
     else {
-        res.render('places/show'), { place: places[id]}
+        res.render('places/show', { place: places[id], id })
     }
 })
 
-//HOME ROUTE
-router.get('/', (req, res) => {
-    res.render('places/index', { places });
+
+
+// DELETE ROUTE
+router.delete('/places/:id', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+        res.render('error404')
+    }
+    else if (!places[id]) {
+        res.render('error404')
+    }
+    else {
+        places.splice(id, 1)
+        res.send('/places')
+    }
 })
+
+
 
 module.exports = router;
 
