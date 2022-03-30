@@ -1,7 +1,25 @@
+/* //// */
+/* BODY */
+/* //// */
+
+body {
+    text-align: center;
+    background-color: lightblue;
+}
+
 h1 {
     text-align: center;
     color: cornflowerblue;
-    }
+}
+
+h2 {
+    color: lightblue;
+}
+
+main {
+    margin: 0 20px 0 20px;
+    background-color: white;
+}
 
 /* ///////////// */
 /* NAV COMPONENTS*/
@@ -35,27 +53,25 @@ nav a:hover {
 }
 
 /* //// */
-/* BODY */
+/* Other */
 /* //// */
 
-body {
-    text-align: center;
-    background-color: lightblue;
+form {
+    display: inline;
 }
 
-main {
-    margin: 0 20px 0 20px;
-    background-color: white;
+.inactive {
+    color: gray;
 }
-/* 
-#homeImage {
-    width: 50%;
-} */
+
+.border {
+    border: 1px solid gray;
+}
 
 img {
-    width: 50%;
+    height: 20em;
 }
 
-#fourOfourimage {
+/* #fourOfourimage {
     max-width: 500px;
-}
+} */
