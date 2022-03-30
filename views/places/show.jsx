@@ -75,19 +75,50 @@ function show (data) {
                     </div>
                     <div className='row'>
                         <div className='form-group col-sm-4'>
-                            <label htmlFor="Author">Author</label>
-                            <input id='author' name='author' className='form-control'/>
+                            <label 
+                                htmlFor="Author">
+                                    Author
+                            </label>
+                            <input 
+                                id='author' 
+                                name='author' 
+                                className='form-control'
+                            />
                         </div>
                         <div className='form-group col-sm-4'>
-                            <label htmlFor="stars">Star Rating</label>
-                            <input type="range" step='0.5' min='1' max='5' id='stars' name='stars' className='form-control'/>
+                            <label 
+                                htmlFor="stars">
+                                    Star Rating
+                            </label>
+                            <input 
+                                type="range" 
+                                step='0.5' 
+                                min='1' 
+                                max='5' 
+                                id='stars' 
+                                name='stars' 
+                                className='form-control'
+                            />
                         </div>
                         <div className="form-group col-sm-2">
-                            <label className='form-check-label' htmlFor="rant">Rant?</label>
-                            <input type="checkbox" id="rant" name="rant" className="form-check-input" />
+                            <label 
+                                className='form-check-label' 
+                                htmlFor="rant">
+                                    Rant?
+                            </label>
+                            <input 
+                                type="checkbox" 
+                                id="rant" 
+                                name="rant" 
+                                className="form-check-input" 
+                            />
                         </div>
                     </div>
-                    <input type="submit" className='btn btn-primary' value='Add Comment'/>
+                    <input 
+                        type="submit" 
+                        className='btn btn-primary' 
+                        value='Add Comment'
+                    />
                 </form>
             </main>
         </Def>
