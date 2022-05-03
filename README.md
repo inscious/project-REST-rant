@@ -1,6 +1,7 @@
 # Project REST-Rant
 
-REST-Rant is an app where users can review restaurants.
+REST-Rant is an app where users can review restaurants. Application performs full CRUD operations.
+
 
 Method | Path | Purpose 
 -------|-------|--------
