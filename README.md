@@ -4,6 +4,11 @@ REST-Rant is an app where users can review restaurants. Application performs ful
 
 ## Technologies Used
 
+** Node.js, Express.js,
+** React,
+** MongoDB,
+** Mongoose
+
 
 
 Method | Path | Purpose 
